@@ -16,7 +16,16 @@
   }
 }
 
+/* In your CSS */
+.rounded-video {
+  border-radius: 50px; /* This can be omitted if you're using inline styles */
+}
+
+
+
+
 body {
+  padding: 0 70px ;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +33,204 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+    /* background: #170035; */
+    background: #C7C7C7;
+    overflow-x: hidden;
+}
+
+ 
+
+
+
+/* BLURRY BALL */
+#blurry-ball {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: -100px; /* Adjust as needed to move down */
+  left: 40px; /* Adjust as needed to move right */
+  width: 300px; /* Diameter of the ball */
+  height: 300px; /* Diameter of the ball */
+  background-color:#A09CDF;
+  border-radius: 50%; /* Makes it a circle */
+  filter: blur(125px);
+  z-index: -1; /* Ensure it doesn't overlap content */
+}
+
+#blurry-pink-ball {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: -50px; /* Adjust as needed to move down */
+  left: 200px; /* Adjust as needed to move right */
+  width: 300px; /* Diameter of the ball */
+  height: 300px; /* Diameter of the ball */
+  background-color:#D09DCF;
+  border-radius: 50%; /* Makes it a circle */
+  filter: blur(125px);
+  z-index: -1; /* Ensure it doesn't overlap content */
+}
+
+
+#blurry-ball2 {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 230px; /* Adjust as needed to move down */
+  left: 1000px; /* Adjust as needed to move right */
+  width: 300px; /* Diameter of the ball */
+  height: 300px; /* Diameter of the ball */
+  background-color:#A09CDF;
+  border-radius: 50%; /* Makes it a circle */
+  filter: blur(125px);
+  z-index: -1; /* Ensure it doesn't overlap content */
+}
+
+#blurry-pink-ball2 {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 180px; /* Adjust as needed to move down */
+  left: 900px; /* Adjust as needed to move right */
+  width: 300px; /* Diameter of the ball */
+  height: 300px; /* Diameter of the ball */
+  background-color:#D09DCF;
+  border-radius: 50%; /* Makes it a circle */
+  filter: blur(125px);
+  z-index: -1; /* Ensure it doesn't overlap content */
+}
+
+
+
+/* Example media query for smaller screens */
+@media screen and (max-width: 768px) {
+  #blurry-ball2 {
+    top: 150px;
+    left: 500px;
+    width: 150px;
+    height: 150px;
+  }
+  #blurry-pink-ball2 {
+    top: 150px;
+    left: 500px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+#blurry-ball3 {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 1000px; /* Adjust as needed to move down */
+  left: 40px; /* Adjust as needed to move right */
+  width: 300px; /* Diameter of the ball */
+  height: 300px; /* Diameter of the ball */
+  background-color:#A09CDF;
+  border-radius: 50%; /* Makes it a circle */
+  filter: blur(125px);
+  z-index: -1; /* Ensure it doesn't overlap content */
+}
+
+#blurry-pink-ball3 {
+  position: absolute; /* Position relative to the nearest positioned ancestor */
+  top: 800px; /* Adjust as needed to move down */
+  left: -40px; /* Adjust as needed to move right */
+  width: 300px; /* Diameter of the ball */
+  height: 300px; /* Diameter of the ball */
+  background-color:#D09DCF;
+  border-radius: 50%; /* Makes it a circle */
+  filter: blur(125px);
+  z-index: -1; /* Ensure it doesn't overlap content */
+}
+
+
+.gradient-button {
+  background: linear-gradient(94deg, #C9A1C8 4.46%, rgba(186, 197, 255, 0.17) 55.23%, #A09CDF 102.36%);
+
+
+  color: #fff; /* Adjust text color as needed */
+  border: none; /* Remove default border */
+   /* Adjust padding as needed */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  /* Additional styling as needed */
+}
+
+
+
+
+
+
+
+
+
+/* SLIDER */
+.service-slider {
+  display: flex;
+  animation: slide 20s linear infinite;
+  /* Double the width if you're duplicating the services */
+  width: calc(350px * number_of_services * 2 + 2rem * number_of_services * 2);
+}
+
+.service-box {
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); /* Slide halfway for the loop effect */ }
+}
+
+
+
+
+
+/* about */
+.team-member{
+  border-radius: 10px 0px 30px 30px;
+
+}
+
+
+.getquotebanner{
+  background:  linear-gradient(94deg, #C9A1C8 4.46%, rgba(186, 197, 255, 0.17) 55.23%, #A09CDF 102.36%);
+
+
+}
+
+
+
+.footer-shadow {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-shadow::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Position the shadow above the footer */
+  left: 50%;
+  width: 60%; /* Adjust width to control the spread of shadow */
+  height: 10px; /* Adjust height to control the size of shadow */
+  background: linear-gradient(94deg, #C9A1C8 4.46%, rgba(186, 197, 255, 0.17) 55.23%, #A09CDF 102.36%); /* Shadow color */
+  transform: translateX(-50%) scaleX(1.5); /* Center and stretch the shadow */
+  filter: blur(5px); /* Blur the shadow */
+  z-index: -1;
+}
+
+
+
+.form-input input, .message-form::placeholder {
+  padding: 15px 20px;
+  
+  color: white; /* Text color */
+}
+
+.form-input input::placeholder , .message-form::placeholder{
+  color: white; /* Placeholder text color */
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .fixed-video {
+    position: static;
+    width: 100%;
+  }
 }

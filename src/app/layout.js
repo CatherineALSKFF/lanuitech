@@ -1,5 +1,8 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import TawkToWidget from './components/TawkToWidget';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +13,30 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <html lang="en" >
+      
+
+      <body className={inter.className}>
+        <div id='blurry-ball'></div>
+        <div id='blurry-pink-ball'></div>
+      
+      
+      
+        <div id='blurry-ball2' className='hidden md:block'></div>
+        <div id='blurry-pink-ball2' className='hidden md:block'></div>
+        <div id='blurry-ball3'></div>
+        <div id='blurry-pink-ball3'></div>
+
+
+
+        
+          <Navbar />
+          {children}
+          <Footer />
+          <TawkToWidget />
+            
+      </body>
+  
+    </html >
   )
 }
