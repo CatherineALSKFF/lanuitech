@@ -50,9 +50,10 @@ const Portfolio = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', checkScroll);
-    checkScroll(); // Initial check
+    checkScroll();
     return () => window.removeEventListener('scroll', checkScroll);
-  }, []); // Ensure this is an empty array to run only once after mount
+  }, [checkScroll]); // Add checkScroll here
+  
 
 
 

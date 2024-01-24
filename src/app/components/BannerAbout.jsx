@@ -1,5 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+
 const teamsMembers = [
   { name: 'Catherina Al Skaff', title: 'CEO, Software Engineer', imgUrl: '/catherinaalskaff.jpg' },
   { name: 'Jens Christian Mowinckel', title: 'UX/UI Designer', imgUrl: '/logo.png' },
@@ -39,7 +42,8 @@ const BannerAbout = () => {
       <div className="team-members flex flex-wrap justify-center gap-8 mt-6">
         {teamsMembers.map((member, index) => (
           <div key={index} className="team-member mt-[70px] bg-[#6C63FF6E] w-[250px] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
-            <img src={member.imgUrl} alt={member.name} className="w-32 h-32 object-cover rounded-full absolute -top-16 left-1/2 transform -translate-x-1/2" />
+            {/* <Image src={member.imgUrl} alt={member.name} className="w-32 h-32 object-cover rounded-full absolute -top-16 left-1/2 transform -translate-x-1/2" /> */}
+            <Image src={member.imgUrl} alt={member.name} width={110} height={110} className="w-32 h-32 object-cover rounded-full absolute -top-16 left-1/2 transform -translate-x-1/2" />
             <div className="pt-20">
               <h3 className="team-member-name font-semibold text-lg">{member.name}</h3>
               <p className="team-member-title text-[#CCC]">{member.title}</p>

@@ -14,22 +14,22 @@ const services = [
   {
    
     
-    title:  <>Elevating Your Brand with Comprehensive <span className='text-[#8D86FF]'>Digital Marketing</span> and <span className='text-[#8D86FF]'>SEO Strategies</span>   </> ,
+    title:  <p>Elevating Your Brand with Comprehensive <span className='text-[#8D86FF]'>Digital Marketing</span> and <span className='text-[#8D86FF]'>SEO Strategies</span>   </p> ,
     description: "In the digital age, visibility is key. LaNuit TECH's digital marketing services are designed to elevate your brand's online presence. We employ advanced SEO techniques to boost your website's rankings, ensuring that you get noticed by your target audience. Our team of digital marketing experts develops tailored strategies, encompassing everything from content marketing and social media campaigns to PPC advertising and email marketing. We focus on creating campaigns that not only increase your visibility but also engage and convert your audience, ensuring a solid return on investment.",
     imgUrl: '/brandelevating.svg'
   },
   {
-    title:  <> Crafting Intuitive and Engaging User Experiences with Innovative <span className='text-[#8D86FF]'>UX/UI Design</span>  </>,
+    title:  <p> Crafting Intuitive and Engaging User Experiences with Innovative <span className='text-[#8D86FF]'>UX/UI Design</span>  </p>,
     description: "At LaNuit TECH, we believe that the key to a successful digital product lies in its user experience. Our UX/UI design team focuses on creating interfaces that are both visually appealing and intuitively navigable. We start by understanding your users and their needs, which helps us design experiences that are both engaging and functional. From wireframes and prototypes to the final design, we ensure that every aspect of the user interface enhances the user journey, thereby improving customer satisfaction and loyalty.",
     imgUrl: '/uxuidesign.svg'
   },
   {
-    title: <>Compelling <span className='text-[#8D86FF]'>Content Creation and Strategy</span>  to Captivate Your Audience  </>,
+    title: <p>Compelling <span className='text-[#8D86FF]'>Content Creation and Strategy</span>  to Captivate Your Audience  </p>,
     description: "Content is the voice of your brand, and at LaNuit TECH, we help you tell your story compellingly. Our content creation and strategy services are designed to resonate with your target audience. From SEO-optimized blog posts and articles to engaging social media content and informative eBooks, our content experts craft narratives that not only inform and entertain but also drive conversions. We focus on creating content that aligns with your brand's voice and objectives, ensuring consistency across all your digital platforms.",
     imgUrl: '/contentcreation.svg'
   },
   { 
-    title:<>Transforming Data into Actionable Insights for <span className='text-[#8D86FF]'>Strategic Decision Making</span>   </> ,
+    title:<p>Transforming Data into Actionable Insights for <span className='text-[#8D86FF]'>Strategic Decision Making</span>   </p> ,
     description: "In the data-driven world of digital business, informed decision-making is paramount. LaNuit TECH offers comprehensive data analytics and insights services to help you understand your market and audience better. Our team utilizes the latest tools and techniques to gather and analyze data, providing you with actionable insights that can guide your business strategies. From tracking user behavior to understanding market trends, our analytics services are designed to give you a competitive edge by making data-backed decisions.",
     imgUrl: '/analiytics.svg'
   }
