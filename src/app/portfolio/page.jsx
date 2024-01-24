@@ -27,7 +27,7 @@ const Portfolio = () => {
   return (
     <div className='px-6 py-10 min-h-screen'>
       {projects.map((project, index) => (
-        <div key={index} className='my-10 md:grid md:grid-cols-2 md:gap-4 items-center'>
+        <div key={index} className='my-10 md:grid md:grid-cols-2 md:gap-4 items-center mb-[100px]'>
           <div className={`${index % 2 === 0 ? '' : 'md:order-2'} px-4`}>
             <iframe 
               src={project.videoUrl} 
@@ -40,9 +40,9 @@ const Portfolio = () => {
           </div>
           <div className={`${index % 2 === 0 ? 'md:order-2' : ''} px-4 py-2`}>
             <h3 className='text-2xl font-bold mb-3'>{project.title}</h3>
-            <p>{project.description}</p>
-            <Link href={project.link} className="project-link text-[#8D86FF] hover:underline">
-                Click here to check it out
+            <p className='mb-[50px]'>{project.description}</p>
+            <Link href={project.link} className=" mt-[100px] hover:bg-blue-700  gradient-button rounded-[50px] my-2 px-4 py-3 shadow-lg md:w-auto">
+                Check it out
             </Link>
           </div>
         </div>

@@ -56,7 +56,7 @@ export default function Navbar() {
                 <a href="/services" className="block py-2 px-4  text-sm hover:bg-gray-200">SERVICES</a>
                 <a href="/contact" className="block py-2 px-4 text-sm hover:bg-gray-200">GET IN TOUCH</a>
                 <a href="/portfolio" className="block py-2 px-4 text-sm hover:bg-gray-200">OUR PROJECTS</a>
-                <a href="/contact" className=" mt-[20px]  py-2 px-3 gradient-button text-white rounded-[50px] hover:bg-blue-400 transition duration-300">Get a Free Consultation</a>
+                <a href="/contact" className=" mt-[50px]  py-2 px-3 gradient-button text-white rounded-[50px] hover:bg-blue-400 transition duration-300">Get a Free Consultation</a>
                     
             </div>
         </nav>

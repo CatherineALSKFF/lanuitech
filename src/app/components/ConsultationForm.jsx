@@ -13,6 +13,9 @@ const ContactForm = () => {
     message: ''
   });
 
+  const [submissionStatus, setSubmissionStatus] = useState('');
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -38,6 +41,18 @@ const ContactForm = () => {
   
       const data = await response.json();
       console.log(data);
+      setSubmissionStatus('Your message has been sent successfully. We will contact you shortly.🚀');
+      // Optionally clear the form here
+      setFormData({
+        firstName: '',
+        lastName: '',
+        companyName: '',
+        jobTitle: '',
+        workEmail: '',
+        companySize: '',
+        companyType: '',
+        message: ''
+      });
       // Handle success - you might want to clear the form or show a success message
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -46,10 +61,10 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-2xl p-10 rounded-[30px] bg-[#6C63FF6E] form-input">
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto shadow-2xl p-4 md:p-10 rounded-[30px] bg-[#6C63FF6E]">
       <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1">
-          <label htmlFor="firstName" className="block text-white my-2">First Name</label>
+        <div className="flex-1 mb-4 md:mb-0">
+          <label htmlFor="firstName" className="block text-sm md:text-base text-white my-2">First Name</label>
           <input
             type="text"
             id="firstName"
@@ -58,9 +73,9 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="John"
             className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
-          />
+            required/>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 mb-4 md:mb-0">
           <label htmlFor="lastName" className="block text-white my-2">Last Name</label>
           <input
             type="text"
@@ -70,12 +85,13 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Doe"
             className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
+            required
           />
         </div>
       </div>
       
       <div className="flex flex-col md:flex-row gap-4 mt-4">
-        <div className="flex-1">
+        <div className="flex-1 mb-4 md:mb-0">
           <label htmlFor="companyName" className="block text-white my-2">Company Name</label>
           <input
             type="text"
@@ -85,9 +101,10 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Acme"
             className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
+            required
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 mb-4 md:mb-0">
           <label htmlFor="jobTitle" className="block text-white my-2">Job Title</label>
           <input
             type="text"
@@ -97,11 +114,12 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Marketing Specialist"
             className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
+            required
           />
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4  md:mb-0">
         <label htmlFor="workEmail" className="block text-white my-2">Work Email</label>
         <input
           type="email"
@@ -111,10 +129,11 @@ const ContactForm = () => {
           onChange={handleChange}
           placeholder="john.doe@gmail.com"
           className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
+          required
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4  md:mb-0">
         <label htmlFor="companySize" className="block text-white my-2">Company Size</label>
         <select 
           id="companySize"
@@ -122,6 +141,7 @@ const ContactForm = () => {
           value={formData.companySize}
           onChange={handleChange}
           className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
+          required
         >
           <option value="">Select Company Size</option>
           <option value="1-10">1-10 employees</option>
@@ -133,14 +153,15 @@ const ContactForm = () => {
         </select>
       </div>
 
-      <div className="mb-4">
-        <label htmlFor="companyType" className="block text-white my-2">Company Type</label>
+      <div className="mb-4  md:mb-0">
+        <label htmlFor="companyType" className="block text-sm md:text-base text-white my-2">Company Type</label>
         <select 
           id="companyType"
           name="companyType"
           value={formData.companyType}
           onChange={handleChange}
           className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none "
+          required
         >
           <option value="">Select Company Type</option>
           <option value="Accounting">Accounting</option>
@@ -162,12 +183,17 @@ const ContactForm = () => {
           onChange={handleChange}
           placeholder="Tell us your challenges, requirements or ask us a question."
           className="shadow-lg w-full p-2 border rounded-[15px] bg-[#BDBCD587] border-none  h-32 message-form"
+          required
         />
       </div>
 
-      <button type="submit" className="hover:bg-blue-700  gradient-button rounded-[50px] my-2 px-4 py-3 shadow-lg md:w-auto" onClick={handleSubmit}>
+      <button type="submit" className="hover:bg-blue-700  gradient-button rounded-[50px] my-2 px-4 py-3 shadow-lg md:w-auto" >
         Submit
       </button>
+
+        {/* Display submission status */}
+        {submissionStatus && <div className="mt-4 text-center ">{submissionStatus}</div>}
+   
     </form>
   );
 };

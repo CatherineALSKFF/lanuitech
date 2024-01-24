@@ -100,14 +100,26 @@ body {
   #blurry-ball2 {
     top: 150px;
     left: 500px;
-    width: 150px;
+    width: 20px;
     height: 150px;
   }
   #blurry-pink-ball2 {
     top: 150px;
-    left: 500px;
-    width: 150px;
-    height: 150px;
+    left: 100px;
+    width: 20px;
+    height: 20px;
+  }
+  #blurry-ball {
+    top: -50px;
+    left: 40px;
+    width: 300px;
+    height: 300px;
+  }
+  #blurry-pink-ball {
+    top: -20px;
+    left: -40px;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -155,24 +167,33 @@ body {
 
 
 
-
 /* SLIDER */
 .service-slider {
   display: flex;
   animation: slide 20s linear infinite;
-  /* Double the width if you're duplicating the services */
-  width: calc(350px * number_of_services * 2 + 2rem * number_of_services * 2);
+  width: 100%;
 }
+
+
 
 .service-box {
   flex-shrink: 0;
+  /* Adjust width as needed for responsiveness */
 }
 
 @keyframes slide {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); /* Slide halfway for the loop effect */ }
+  100% { transform: translateX(-50%); }
 }
 
+/* @media screen and (max-width: 768px) {
+  .service-slider {
+    
+    animation: slide 5s linear infinite;
+    width: 100%;
+    max-width: 100vw;
+  }
+} */
 
 
 

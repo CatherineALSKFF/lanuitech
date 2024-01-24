@@ -9,8 +9,8 @@ const Footer = () => {
           <h4 className="font-bold text-lg mb-4">Quick Links</h4>
           <ul >
             <li><a href="/services" className="hover:text-gray-300">OUR SERVICES</a></li>
-            <li><a href="/projects" className="hover:text-gray-300">OUR PROJECTS</a></li>
-            <li><a href="/about" className="hover:text-gray-300">ABOUT US</a></li>
+            <li><a href="/portfolio" className="hover:text-gray-300">OUR PROJECTS</a></li>
+            <li><a href="/#team-intro" className="hover:text-gray-300">ABOUT US</a></li>
             <li><a href="/contact" className="hover:text-gray-300">GET IN TOUCH</a></li>
           </ul>
         </div>

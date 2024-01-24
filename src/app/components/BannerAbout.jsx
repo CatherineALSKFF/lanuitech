@@ -3,14 +3,15 @@ import React from 'react';
 const teamsMembers = [
   { name: 'Catherina Al Skaff', title: 'CEO, Software Engineer', imgUrl: '/catherinaalskaff.jpg' },
   { name: 'Jens Christian Mowinckel', title: 'UX/UI Designer', imgUrl: '/logo.png' },
-  { name: 'Another Name', title: 'Another Title', imgUrl: '/logo.png' }
+  { name: 'Sky El Tenn', title: 'Marketing Specialist', imgUrl: '/logo.png' },
+  { name: 'Elio Fikani', title: 'Web Developer', imgUrl: '/logo.png' }
 ];
 
 const BannerAbout = () => {
   const name = process.env.DOM_NAME;
 
   return (
-    <div className="content-section my-[150px] px-4 text-center">
+    <div className="content-section my-[150px] px-4 text-center" id='team-intro'>
       <h2 className='text-2xl md:text-3xl font-bold mb-5'>Get to know our global team!</h2>
       <p>
         At {name}, we pride ourselves on being an international team of experts...
