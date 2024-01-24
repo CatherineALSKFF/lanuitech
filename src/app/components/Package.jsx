@@ -50,10 +50,13 @@ const Package = () => {
 
 
     return (
-        <div className="container mx-auto mb-[100px]">
-          <div className="grid md:grid-cols-3 gap-4">
-            {packages.map((pkg, index) => (
-              <div key={index} className="max-w-sm rounded-[50px] overflow-hidden shadow-lg flex flex-col justify-between p-4 h-full mt-6 border-t">
+      <div className="container mx-auto mb-[100px]">
+      <div className="grid md:grid-cols-3 gap-4">
+        {packages.map((pkg, index) => (
+          <div
+            key={index}
+            className={`max-w-sm rounded-[50px] overflow-hidden shadow-lg flex flex-col justify-between p-4 h-full mt-6 border-t ${index === 0 ? 'slide-in-left' : ''} ${index === 2 ? 'slide-in-right' : ''}`}
+          >
                 <div>
                   <div className="font-bold text-2xl mb-2 text-[#8D86FF]">{pkg.name}</div>
                   <p className="text-base mb-4">

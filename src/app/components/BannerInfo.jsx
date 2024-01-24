@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react';
 
 
 const services = [
@@ -31,14 +32,16 @@ const services = [
       description: "Leveraging data to inform strategies and drive decision-making."
     }
   ];
-  
+
+
 
   const BannerInfo = () => {
-    const name = process.env.DOM_NAME;
+
+   
   
     return (
-      <div className="content-section my-12 px-4 text-center">
-        <h3 className='text-2xl md:text-3xl font-semibold my-5'>Our Comprehensive Range of Services</h3>
+      <div id='content-section' className='content-section my-12 px-4 text-center'>
+      <h3 className='text-2xl md:text-3xl font-semibold my-5'>Our Comprehensive Range of Services</h3>
         <p>We understand that the digital landscape is ever-evolving...</p>
   
         {/* Slider container with max width and overflow handling */}

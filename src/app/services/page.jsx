@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react';
 import Package from '../components/Package';
 
 
@@ -35,11 +36,48 @@ const services = [
 ];
 
 const Services = () => {
+
+
+
+
+  const [visibleServices, setVisibleServices] = useState(new Array(services.length).fill(false));
+
+  const checkScroll = () => {
+    services.forEach((_, index) => {
+      const element = document.getElementById(`service-${index}`);
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        if (elementPosition < viewportHeight - 100) {
+          setVisibleServices(visibleServices => {
+            const newVisibleServices = [...visibleServices];
+            newVisibleServices[index] = true;
+            return newVisibleServices;
+          });
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, []);
+
+
+
+
   return (
     <div className='flex flex-col items-center justify-center px-6 py-10 min-h-screen'>
       <Package/>
       {services.map((service, index) => (
-        <div key={index} className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} my-10 items-center md:justify-between w-full md:max-w-4xl`}>
+        <div 
+          key={index} 
+          id={`service-${index}`}
+          className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} my-10 items-center md:justify-between w-full md:max-w-4xl ${visibleServices[index] ? 'visible' : 'fadeInOnScroll'}`}
+        >
           <div className={`w-full md:w-1/2 px-4 py-2`}>
             <h3 className='text-2xl font-bold mb-3'>{service.title}</h3>
             <p className="text-base ">{service.description}</p>

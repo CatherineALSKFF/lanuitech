@@ -255,3 +255,96 @@ body {
     width: 100%;
   }
 }
+
+
+
+
+
+
+
+
+/* FADE ANIMATION */
+
+/* Initial state: not visible */
+
+
+.fadeInOnScroll {
+  opacity: 0;
+  visibility: hidden; /* Ensure it starts completely invisible */
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, visibility 0s linear 1.5s, transform 1s ease-out; /* Smooth transition */
+}
+
+/* State when the element becomes visible */
+.visible {
+  opacity: 1;
+  visibility: visible; /* Make it fully visible */
+  transform: translateY(0);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Maintain smooth transition */
+}
+
+
+
+
+/* slide from right */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+
+
+/* Packages animation */
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+
+
+.gradient-logo {
+  font-size: 30px; /* Adjust the size as needed */
+  font-weight: bolder; /* Optional: if you want bold text */
+  background: linear-gradient(94deg, #c57dc2 4.46%, rgba(111, 128, 213, 0.17) 55.23%, #776fe4 102.36%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
+  -webkit-text-fill-color: transparent; /* For Webkit browsers */
+
+}

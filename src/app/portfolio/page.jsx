@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const Portfolio = () => {
@@ -24,10 +24,55 @@ const Portfolio = () => {
     }
   ];
 
+
+
+
+  const [visibleProjects, setVisibleProjects] = useState(new Array(projects.length).fill(false));
+
+  const checkScroll = () => {
+    console.log('Checking scroll...'); // Debugging
+    projects.forEach((_, index) => {
+      const element = document.getElementById(`project-${index}`);
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        if (elementPosition < viewportHeight - 100) {
+          setVisibleProjects(visibleProjects => {
+            const newVisibleProjects = [...visibleProjects];
+            newVisibleProjects[index] = true;
+            return newVisibleProjects;
+          });
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, []); // Ensure this is an empty array to run only once after mount
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className='px-6 py-10 min-h-screen'>
-      {projects.map((project, index) => (
-        <div key={index} className='my-10 md:grid md:grid-cols-2 md:gap-4 items-center mb-[100px]'>
+     {projects.map((project, index) => (
+  <div 
+    key={index} 
+    id={`project-${index}`}
+    className={`my-10 md:grid md:grid-cols-2 md:gap-4 items-center mb-[100px] ${visibleProjects[index] ? 'visible' : 'fadeInOnScroll'}`}
+  >
           <div className={`${index % 2 === 0 ? '' : 'md:order-2'} px-4`}>
             <iframe 
               src={project.videoUrl} 

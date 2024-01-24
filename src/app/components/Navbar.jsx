@@ -16,7 +16,9 @@ export default function Navbar() {
                         {/* Logo */}
                         <div>
                             <a href="/" className="flex items-center py-4 px-2">
-                                <Image src="/logo3.png" alt="Logo" width={45} height={45} className='rounded-[50px]' />
+                                {/* <Image src="/logo3.png" alt="Logo" width={45} height={45} className='rounded-[50px]' /> */}
+                                <span className="gradient-logo text-xl">&lt;LaNuit/&gt;</span>
+
 
 
 
