@@ -1,6 +1,23 @@
 "use client"
 import React, { useState } from 'react';
 
+
+// Utility function to get the value of a cookie by name
+// function getCookie(name) {
+//   let cookieValue = null;
+//   if (document.cookie && document.cookie !== '') {
+//     const cookies = document.cookie.split(';');
+//     for (let i = 0; i < cookies.length; i++) {
+//       const cookie = cookies[i].trim();
+//       if (cookie.substring(0, name.length + 1) === (name + '=')) {
+//         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+//         break;
+//       }
+//     }
+//   }
+//   return cookieValue;
+// }
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -24,11 +41,16 @@ const ContactForm = () => {
     e.preventDefault();
     console.log("Submitting form data:", formData);
 
+     // Read CSRF token from cookies
+  // const csrfToken = getCookie('_csrf');
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          // Include CSRF token in headers
+        // 'csrf-token': csrfToken,
         },
         body: JSON.stringify(formData),
       });
