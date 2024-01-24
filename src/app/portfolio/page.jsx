@@ -1,9 +1,9 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 const Portfolio = () => {
-  const projects = [
+  const projects = useMemo(() => [
     {
       title: 'Fasting Focused - Personal Training Platform',
       description: 'Collaborated with the Fasting Focused team to develop and market their personal training website...',
@@ -22,12 +22,16 @@ const Portfolio = () => {
       link: 'https://skafstones.store',
       videoUrl: 'https://player.vimeo.com/video/905110035?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&muted=1'
     }
-  ];
+  ], []);
 
 
 
 
   const [visibleProjects, setVisibleProjects] = useState(new Array(projects.length).fill(false));
+
+
+  useEffect(() => {
+
 
   const checkScroll = () => {
     console.log('Checking scroll...'); // Debugging
@@ -48,11 +52,10 @@ const Portfolio = () => {
     });
   };
 
-  useEffect(() => {
     window.addEventListener('scroll', checkScroll);
     checkScroll();
     return () => window.removeEventListener('scroll', checkScroll);
-  }, [checkScroll]); // Add checkScroll here
+  }, [projects]); // Add checkScroll here
   
 
 

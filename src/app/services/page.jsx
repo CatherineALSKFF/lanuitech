@@ -1,13 +1,14 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Package from '../components/Package';
+import Image from 'next/image';
 
 
 // text-[#8D86FF]
 
 const services = [
   {
-    title: <>Custom <span className='text-[#8D86FF]'>Web and Mobile Solutions</span>  for the Modern Digital Landscape"</>,
+    title: <>Custom <span className='text-[#8D86FF]'>Web and Mobile Solutions</span>  for the Modern Digital Landscape</>,
     description: "At LaNuit TECH, we specialize in crafting state-of-the-art web and mobile solutions that cater to the unique needs of your business. Our expert team of developers is proficient in the latest technologies and frameworks to deliver responsive, user-friendly websites and cutting-edge mobile applications. Whether you're looking for an e-commerce platform, a dynamic web application, or a feature-rich mobile app, we ensure a seamless user experience across all devices. Our development process is transparent, collaborative, and focused on delivering high-performance digital products that drive business growth and user engagement.",
     imgUrl:'/bannerpic.png'
   },
@@ -83,7 +84,7 @@ const Services = () => {
             <p className="text-base ">{service.description}</p>
           </div>
           <div className={`w-full md:w-1/2 px-4`}>
-            <img src={service.imgUrl} alt={service.title} className="w-full h-auto object-cover rounded-lg" />
+            <Image src={service.imgUrl} alt={service.title} width={300} height={300} className="w-full h-auto object-cover rounded-lg" />
           </div>
         </div>
       ))}
