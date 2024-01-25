@@ -163,41 +163,6 @@ body {
 
 
 
-
-
-
-
-/* SLIDER */
-.service-slider {
-  display: flex;
-  animation: slide 20s linear infinite;
-  width: 100%;
-}
-
-
-
-.service-box {
-  flex-shrink: 0;
-  /* Adjust width as needed for responsiveness */
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* @media screen and (max-width: 768px) {
-  .service-slider {
-    
-    animation: slide 5s linear infinite;
-    width: 100%;
-    max-width: 100vw;
-  }
-} */
-
-
-
-
 /* about */
 .team-member{
   border-radius: 10px 0px 30px 30px;
@@ -348,3 +313,31 @@ body {
   -webkit-text-fill-color: transparent; /* For Webkit browsers */
 
 }
+
+
+
+
+/* SLIDER */
+.slider-container {
+  max-width: 100vw; /* Viewport Width */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative; /* For positioning inner elements */
+  margin: auto; /* Center the slider */
+}
+
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.service-slider {
+  display: flex;
+  will-change: transform;
+  animation: slide 10s linear infinite; /* Adjust duration as needed */
+}
+
+.service-box {
+  flex: 0 0 auto; /* This ensures that the boxes don't shrink or grow */
+}
+
