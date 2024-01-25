@@ -14,6 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" >
+      <head>
+      <title>LaNuit Tech | Elevate your online presence </title>
+        <link rel="icon" href="/logo3.png" type="image/x-icon" sizes="16x16" />
+      </head>
       
 
       <body className={inter.className}>
