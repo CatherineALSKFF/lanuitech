@@ -12,11 +12,30 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+  const enableGA = process.env.NEXT_PUBLIC_ENABLE_GA === 'true';
+  
   return (
     <html lang="en" >
       <head>
       <title>LaNuit Tech | Elevate your online presence </title>
         <link rel="icon" href="/logo3.png" type="image/x-icon" sizes="16x16" />
+        {/* Conditional Google Analytics */}
+        {enableGA && googleAnalyticsId && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${googleAnalyticsId}');
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       
 
