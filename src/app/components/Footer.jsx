@@ -19,10 +19,9 @@ const Footer = () => {
         <div className="mb-8 md:mb-0">
           <h4 className="font-bold text-lg mb-4">Follow Us</h4>
           <ul>
-            <li><a href="https://twitter.com/yourhandle" className="hover:text-gray-300">TWITTER</a></li>
-            <li><a href="https://facebook.com/yourhandle" className="hover:text-gray-300">FACEBOOK</a></li>
-            <li><a href="https://linkedin.com/yourhandle" className="hover:text-gray-300">LINKEDIN</a></li>
-            <li><a href="https://instagram.com/yourhandle" className="hover:text-gray-300">INSTAGRAM</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61555972621459" className="hover:text-gray-300">FACEBOOK</a></li>
+            <li><a href="https://www.linkedin.com/company/lanuit-tech/" className="hover:text-gray-300">LINKEDIN</a></li>
+            <li><a href="https://www.instagram.com/lanuit_tech/" className="hover:text-gray-300">INSTAGRAM</a></li>
           </ul>
         </div>
 
