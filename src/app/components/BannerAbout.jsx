@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 
 const teamsMembers = [
-  { name: 'Catherina Al Skaff', title: 'CEO, Software Engineer', imgUrl: '/catherinaalskaff.jpg' },
+  { name: 'Catherina Al Skaff', title: 'Founder, Software Engineer', imgUrl: '/catherinaalskaff.jpg' },
   { name: 'Jens Christian Mowinckel', title: 'UX/UI Designer', imgUrl: '/logo.png' },
   { name: 'Sky El Tenn', title: 'Marketing Specialist', imgUrl: '/logo.png' },
   { name: 'Elio Fikani', title: 'Web Developer', imgUrl: '/logo.png' }
