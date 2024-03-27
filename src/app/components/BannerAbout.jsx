@@ -19,7 +19,7 @@ const BannerAbout = () => {
       const elementPosition = element.getBoundingClientRect().top;
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-      const visible = elementPosition < viewportHeight / 2;
+      const visible = elementPosition < viewportHeight / 1;
       setIsVisible(visible);
     }
   };

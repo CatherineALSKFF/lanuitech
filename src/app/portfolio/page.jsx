@@ -71,14 +71,18 @@ const Portfolio = () => {
 
   return (
     <div className='px-6 py-10 min-h-screen'>
-     {projects.map((project, index) => (
-  <div 
-    key={index} 
-    id={`project-${index}`}
-    className={`my-10 md:grid md:grid-cols-2 md:gap-4 items-center mb-[100px] ${visibleProjects[index] ? 'visible' : 'fadeInOnScroll'}`}
-  >
+      <div className='text-center my-[100px]'>
+        <h2 className=' text-2xl font-bold mb-3'>We've developed a small demo website for you restaurant owners out there</h2>
+        <a href="https://restaurantdemo.lanuitech.com/" className='inline-block hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-[30px] gradient-button' target="_blank" rel="noopener noreferrer">Check it out 😉</a>
+      </div>
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          id={`project-${index}`}
+          className={`my-10 md:grid md:grid-cols-2 md:gap-4 items-center mb-[100px] ${visibleProjects[index] ? 'visible' : 'fadeInOnScroll'}`}
+        >
           <div className={`${index % 2 === 0 ? '' : 'md:order-2'} px-4`}>
-            <iframe 
+            <iframe
               src={project.videoUrl} 
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture" 
@@ -90,7 +94,7 @@ const Portfolio = () => {
           <div className={`${index % 2 === 0 ? 'md:order-2' : ''} px-4 py-2`}>
             <h3 className='text-2xl font-bold mb-3'>{project.title}</h3>
             <p className='mb-[50px]'>{project.description}</p>
-            <Link href={project.link} className=" mt-[100px] hover:bg-blue-700  gradient-button rounded-[50px] my-2 px-4 py-3 shadow-lg md:w-auto">
+            <Link href={project.link} className=" mt-[100px] hover:bg-blue-700  gradient-button rounded-[50px] my-2 px-4 py-3 shadow-lg md:w-auto" target="_blank" rel="noopener noreferrer">
                 Check it out
             </Link>
           </div>
