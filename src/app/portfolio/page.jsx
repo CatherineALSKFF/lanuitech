@@ -72,7 +72,7 @@ const Portfolio = () => {
   return (
     <div className='px-6 py-10 min-h-screen'>
       <div className='text-center my-[100px]'>
-        <h2 className=' text-2xl font-bold mb-3'>We've developed a small demo website for you restaurant owners out there</h2>
+        <p className='text-2xl font-bold mb-3'>We&apos;ve developed a small demo website for you restaurant owners out there</p>
         <a href="https://restaurantdemo.lanuitech.com/" className='inline-block hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-[30px] gradient-button' target="_blank" rel="noopener noreferrer">Check it out 😉</a>
       </div>
       {projects.map((project, index) => (
