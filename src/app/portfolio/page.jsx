@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Portfolio = () => {
   const projects = useMemo(() => [
@@ -8,7 +9,7 @@ const Portfolio = () => {
       title: 'Fasting Focused - Personal Training Platform',
       description: 'Collaborated with the Fasting Focused team to develop and market their personal training website...',
       link: 'https://fastingfocused.com/',
-      videoUrl: 'https://player.vimeo.com/video/905111178?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&muted=1'
+      videoUrl: '/fastingfocusedpic.png'
     },
     {
       title: 'TechFundMe - Blockchain Crowdfunding Platform',
@@ -82,14 +83,20 @@ const Portfolio = () => {
           className={`my-10 md:grid md:grid-cols-2 md:gap-4 items-center mb-[100px] ${visibleProjects[index] ? 'visible' : 'fadeInOnScroll'}`}
         >
           <div className={`${index % 2 === 0 ? '' : 'md:order-2'} px-4`}>
-            <iframe
+            {project.link ==='https://fastingfocused.com/' ?
+             <Image src={project.videoUrl} 
+             alt=""
+             style={{ height: '500px', borderRadius: '20px', maxWidth:'250px' }} 
+             width={500} height={500}
+              />
+             :<iframe
               src={project.videoUrl} 
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture" 
               allowFullScreen 
               className="w-full "
               style={{ height: '500px', borderRadius: '50px', maxWidth:'250px' }} // Consistent border-radius across all screen sizes
-            ></iframe>
+            ></iframe>}
           </div>
           <div className={`${index % 2 === 0 ? 'md:order-2' : ''} px-4 py-2`}>
             <h3 className='text-2xl font-bold mb-3'>{project.title}</h3>
